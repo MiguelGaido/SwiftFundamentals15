@@ -6,8 +6,15 @@
 struct Rectangle {
     var width: Int
     var height: Int
-    
+
+    var area: Int {
+        return width * height
+    }
 }
+
+let myRectangle = Rectangle(width: 15, height: 5)
+
+print("Area of rectangle: \(myRectangle.area)")
 
 
 /*:
@@ -16,21 +23,46 @@ struct Rectangle {
  Create an instance of `Height` and then change one of its properties. Print out the other property to ensure that it was adjusted accordingly.
  */
 struct Height {
-    var heightInInches: Double
+    var heightInInches: Double {
+        didSet {
+            let correctCentimeters = heightInInches * 2.54
+            if heightInCentimeters != correctCentimeters {
+                heightInCentimeters = correctCentimeters
+            }
+        }
+    }
     
-    var heightInCentimeters: Double
+    var heightInCentimeters: Double {
+        didSet {
+            let correctInches = heightInCentimeters / 2.54
+            if heightInInches != correctInches {
+                heightInInches = correctInches
+            }
+        }
+    }
     
     init(heightInInches: Double) {
         self.heightInInches = heightInInches
-        self.heightInCentimeters = heightInInches*2.54
+        self.heightInCentimeters = heightInInches * 2.54
     }
     
     init(heightInCentimeters: Double) {
         self.heightInCentimeters = heightInCentimeters
-        self.heightInInches = heightInCentimeters/2.54
+        self.heightInInches = heightInCentimeters / 2.54
     }
 }
 
+var myHeight = Height(heightInInches: 65)
+
+print("Initial height in cm: \(myHeight.heightInCentimeters)")
+
+myHeight.heightInInches = 70
+
+print("Updated height in cm: \(myHeight.heightInCentimeters)")
+
+myHeight.heightInCentimeters = 180
+
+print("Updated height in inches: \(myHeight.heightInInches)")  
 
 
 /*:

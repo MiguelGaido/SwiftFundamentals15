@@ -24,14 +24,45 @@ class Spaceship {
     }
 }
 //:  Define a new class `Fighter` that inherits from `Spaceship`. Add a variable property `weapon` that defaults to an empty string and a variable property `remainingFirePower` that defaults to 5.
+class Fighter: Spaceship {
+    var weapon: String = ""
+    var remainingFirePower: Int = 5
 
-
+func fire() {
+        if remainingFirePower > 0 {
+            remainingFirePower -= 1
+            print("\(name) fired \(weapon)! Remaining fire power: \(remainingFirePower)")
+        } else {
+            print("You have no more fire power.")
+        }
+    }
+}
 //:  Create a new instance of `Fighter` called `destroyer`. A `Fighter` will be able to shoot incoming objects to avoid colliding with them. After initialization, set `weapon` to "Laser" and `remainingFirePower` to 10. Note that since `Fighter` inherits from `Spaceship`, it also has properties for `name`, `health`, and `position`, and has methods for `moveLeft()`, `moveRight()`, and `wasHit()` even though you did not specifically add them to the declaration of `Fighter`. Knowing that, set `name` to "Destroyer," print `position`, then call `moveRight()` and print `position` again.
 
+let destroyer = Fighter()
+destroyer.name = "Destroyer"
+destroyer.weapon = "Laser"
+destroyer.remainingFirePower = 10
+
+// Fire a few times
+destroyer.fire()  // 9 left
+destroyer.fire()  // 8 left
+destroyer.fire()
+
+//destroyer.name = "Destroyer"
+//destroyer.weapon = "Laser"
+//destroyer.remainingFirePower = 10
+
+//rint("\(destroyer.name) initial position: \(destroyer.position)")
+
+//destroyer.moveRight()
+
+//print("\(destroyer.name) new position: \(destroyer.position)")
 
 //:  Try to print `weapon` on `falcon`. Why doesn't this work? Provide your answer in a comment or a print statement below, and remove any code you added that doesn't compile.
-
-
+let falcon = Spaceship()
+falcon.name = "Falcon"
+print("falcon cannot access 'weapon' because it is a Spaceship instance, not a Fighter. Only Fighter instances have the 'weapon' property.")
 //:  Add a method to `fighter` called `fire()`. This should check to see if `remainingFirePower` is greater than 0, and if so, should decrement `remainingFirePower` by one. If `remainingFirePower` is not greater than 0, print "You have no more fire power." Call `fire()` on `destroyer` a few times and print `remainingFirePower` after each method call.
 
 
