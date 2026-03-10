@@ -29,25 +29,7 @@
 		9898475E2F5FC611004B0C42 /* Apple PieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Apple PieUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		989847662F5FC611004B0C42 /* Exceptions for "Apple Pie" folder in "Apple Pie" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 9898473D2F5FC60E004B0C42 /* Apple Pie */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		989847402F5FC60E004B0C42 /* Apple Pie */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				989847662F5FC611004B0C42 /* Exceptions for "Apple Pie" folder in "Apple Pie" target */,
-			);
-			path = "Apple Pie";
-			sourceTree = "<group>";
-		};
 		989847572F5FC611004B0C42 /* Apple PieTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Apple PieTests";
@@ -88,7 +70,6 @@
 		989847352F5FC60E004B0C42 = {
 			isa = PBXGroup;
 			children = (
-				989847402F5FC60E004B0C42 /* Apple Pie */,
 				989847572F5FC611004B0C42 /* Apple PieTests */,
 				989847612F5FC611004B0C42 /* Apple PieUITests */,
 				9898473F2F5FC60E004B0C42 /* Products */,
@@ -119,9 +100,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				989847402F5FC60E004B0C42 /* Apple Pie */,
 			);
 			name = "Apple Pie";
 			packageProductDependencies = (
